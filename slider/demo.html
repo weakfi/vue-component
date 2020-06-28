@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-slider-demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./vue-slider.css">
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <slider :is-auto=isAuto :width=width :height=height>
+            <slider-item>
+                <img src="https://tse4-mm.cn.bing.net/th/id/OIP.M9_rDRN5h0qwqkspoBH01wHaD4?pid=Api&rs=1" alt="">
+            </slider-item>
+            <slider-item>2</slider-item>
+            <slider-item>3</slider-item>
+        </slider>
+    </div>
+</body>
+<script src="./vue-slider.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            isAuto: true,
+            width: 500,
+            height: 270
+        }
+    });
+</script>
+</html>
