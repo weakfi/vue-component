@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-tab-demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./vue-tab.js"></script>
+    <link rel="stylesheet" href="./vue-tab.css">
+    <style>
+        .tab-panel{
+            width: 500px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="tab-panel">
+            <light-tab v-model="tabActiveName">
+                <light-tab-panel label="用户管理" name="item-a"><p>用户管理</p></light-tab-panel>
+                <light-tab-panel label="配置管理" name="item-b"><p>上面代码中，对象obj的最后一个属性名，需要计算得到。这时最好采用属性表达式，在新建obj的时候，将该属性与其他属性定义在一起。这样一来，所有属性就在一个地方定义了。</p></light-tab-panel>
+                <light-tab-panel label="系统管理" name="item-c"><img src="https://tse4-mm.cn.bing.net/th/id/OIP.M9_rDRN5h0qwqkspoBH01wHaD4?pid=Api&rs=1" alt=""></light-tab-panel>
+            </light-tab>
+        </div>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            tabActiveName:"item-c",
+        }
+    });
+</script>
+</html>
