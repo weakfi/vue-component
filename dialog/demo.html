@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog component demo</title>
+    <link rel="stylesheet" href="./dialog.css">
+</head>
+<body>
+    <button id="showDialog" draggable="true">show dialog</button>
+</body>
+<script src="./dialog.js"></script>
+<script>
+    document.querySelector('#showDialog').addEventListener('click', (e) => {
+        dialog({
+            title: 'title',
+            content: 'content'
+        });
+    });
+</script>
+</html>
