@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-radio-demo</title>
+    <link rel="stylesheet" href="./radio.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./radio.js"></script>
+</head>
+<body>
+    <div id="root">
+        <light-radio v-model="gender" value="male">我是帅哥</light-radio>
+        <light-radio v-model="gender" value="female">我是美女</light-radio>
+        <p>gender：{{gender}}</p>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el: '#root',
+        data: function(){
+            return {
+                gender: 'male'
+            }
+        },
+    });
+</script>
+</html>

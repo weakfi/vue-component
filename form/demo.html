@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-form-demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div>
+            <label for="myName">我的名字：</label><br />
+            <input id="myName" type="text" :value="myName" @input="changeName" />
+            <p>{{myName}}</p>
+        </div>
+        <div>
+            <p>性别</p>
+            <input type="radio" id="male" name="sex" value="male" v-model="mySex"/>
+            <label for="male">男</label>
+            <input type="radio" id="female" name="sex" value="female" v-model="mySex"/>
+            <label for="female">女</label>
+            <p>{{mySex}}</p>
+        </div>
+        <div>
+            <p>爱好</p>
+            <input type="checkbox" name="interest" value="movie" id="movie" v-model="myInterest">
+            <label for="movie">电影</label>
+            <input type="checkbox" name="interest" value="swimming" id="swimming" v-model="myInterest">
+            <label for="swimming">游泳</label>
+            <input type="checkbox" name="interest" value="reading" id="reading" v-model="myInterest">
+            <label for="reading">阅读</label>
+            <p>{{myInterest}}</p>
+        </div>
+    </div>
+</body>
+<script>
+    // document.querySelector('#myName').addEventListener('input',e=>{
+    //     console.log(`我的名字：${e.target.value}`);
+    // });
+    // document.querySelectorAll('input[name="sex"]').forEach(function(item,index){
+    //     item.addEventListener('change',function(e){
+    //         console.log(`选中的性别：${e.target.value}`);
+    //     });
+    // })
+    // let interestCheckbox = Array.prototype.slice.call(document.querySelectorAll('input[name="interest"]'));
+    // interestCheckbox.forEach((item,index)=>{
+    //     item.addEventListener('change',e=>{
+    //         let interest = [];
+    //         interestCheckbox.forEach((item,index)=>{
+    //             item.checked && interest.push(item.value);
+    //         });
+    //         console.log(`选中的兴趣：${interest}`);
+    //     })
+    // });
+    let vm = new Vue({
+        el: '#root',
+        data: ()=>{
+            return {
+                myName: '',
+                mySex: '',
+                myInterest: []
+            }
+        },
+        methods: {
+            changeName:function(e){
+                this.myName = e.target.value;
+            },
+            changeSex:function(e){
+                this.mySex = e.target.value;
+            }
+        }
+    });
+</script>
+</html>
